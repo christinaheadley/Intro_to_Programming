@@ -35,5 +35,42 @@ half_numbers = numbers.map do |k, v|
 low_numbers = numbers.select! do |k, v|
   v < 25
 end
-p low_numbers
-p numbers
+# p low_numbers
+# p numbers
+# Create a nested hash
+# Car
+
+# type	color	year
+# sedan	blue	2003
+# Truck
+
+# type	color	year
+# pickup	red	1998
+
+# vehicles = {
+#   "car" => { 
+#     type: "sedan",
+#     color: "blue",
+#     year: 2003
+#   },
+#   "truck" => { 
+#      type: "pickup",
+#      color: "red",
+#      year: 1998
+#     }
+#   }
+#   # p vehicles
+# A: 
+# {
+#   car:   { type: 'sedan', color: 'blue', year: 2003 },
+#   truck: { type: 'pickup', color: 'red', year: 1998 }
+# }
+# Rewrite car as a nested array containing the same key-value pairs.
+
+car = {
+  type:  'sedan',
+  color: 'blue',
+  year:  2003
+}
+car = [[:type, 'sedan'], [:color, 'blue'], [:year,  2003]]
+p car[0]
