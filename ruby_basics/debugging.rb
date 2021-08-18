@@ -80,54 +80,97 @@ pets[:dog] << 'bowser'
 
 # Since our original code did not have an explicit return statement, the return value is the evaluated result of the last line executed. The last line is an if statement, which returns the evaluated result of the branch whose condition evaluates as true, or nil if there is no such branch. When we passed 'Confucius' or 'Yoda' in as the argument, the condition person == 'Einstein' evaluated to false, so the last if statement evaluated to nil. This caused our original method to return nil every time an argument other than 'Einstein' is passed in.
 
-balance = 0
+# balance = 0
 
-# Here's what you earned and spent during the first three months.
+# # Here's what you earned and spent during the first three months.
 
-january = {
-  income: [ 1200, 75 ],
-  expenses: [ 650, 140, 33.2, 100, 26.9, 78 ]
-}
+# january = {
+#   income: [ 1200, 75 ],
+#   expenses: [ 650, 140, 33.2, 100, 26.9, 78 ]
+# }
 
-february = {
-  income: [ 1200 ],
-  expenses: [ 650, 140, 320, 46.7, 122.5 ]
-}
+# february = {
+#   income: [ 1200 ],
+#   expenses: [ 650, 140, 320, 46.7, 122.5 ]
+# }
 
-march = {
-  income: [ 1200, 10, 75 ],
-  expenses: [ 650, 140, 350, 12, 59.9, 2.5 ]
-}
+# march = {
+#   income: [ 1200, 10, 75 ],
+#   expenses: [ 650, 140, 350, 12, 59.9, 2.5 ]
+# }
 
-# Let's see how much you've got now...
+# # Let's see how much you've got now...
 
-def calculate_balance(month)
-  plus  = month[:income].sum
-  minus = month[:expenses].sum
+# def calculate_balance(month)
+#   plus  = month[:income].sum
+#   minus = month[:expenses].sum
 
-  plus - minus
-end
+#   plus - minus
+# end
 
-[january, february, march].each do |month|
-  balance += calculate_balance(month)
-end
+# [january, february, march].each do |month|
+#   balance += calculate_balance(month)
+# end
 
-# puts balance
-colors = ['red', 'yellow', 'purple', 'green', 'dark blue', 'turquoise', 'silver', 'black']
-things = ['pen', 'mouse pad', 'coffee mug', 'sofa', 'surf board', 'training mat', 'notebook']
+# # puts balance
+# colors = ['red', 'yellow', 'purple', 'green', 'dark blue', 'turquoise', 'silver', 'black']
+# things = ['pen', 'mouse pad', 'coffee mug', 'sofa', 'surf board', 'training mat', 'notebook']
 
-# colors.shuffle!
-# things.shuffle!
+# # colors.shuffle!
+# # things.shuffle!
 
-i = 0
-loop do
-  # break if i >= colors.length || i >= things.length   
-  break if i >= [colors.length, things.length].min
-  if i == 0
-    puts 'I have a ' + colors[i] + ' ' + things[i] + '.'
-  else
-    puts 'And a ' + colors[i] + ' ' + things[i] + '.'
-  end
+# i = 0
+# loop do
+#   # break if i >= colors.length || i >= things.length   
+#   break if i >= [colors.length, things.length].min
+#   if i == 0
+#     puts 'I have a ' + colors[i] + ' ' + things[i] + '.'
+#   else
+#     puts 'And a ' + colors[i] + ' ' + things[i] + '.'
+#   end
   
-  i += 1
-end
+#   i += 1
+# end
+
+# Given a String of digits, our digit_product method should return the product of all digits in the String argument. You've been asked to implement this method without using reduce or inject.
+# When testing the method, you are surprised by a return value of 0. What's wrong with this code and how can you fix it?
+
+# def digit_product(str_num)
+#   digits = str_num.chars.map { |n| n.to_i }
+#   product = 1
+
+#   digits.each do |digit|
+#     product *= digit
+#   end
+
+#   product
+# end
+
+# p digit_product('12345')
+# We started writing an RPG game, but we already run into an error message. Find the problem and fix it.
+# Each player starts with the same basic stats.
+
+# player = { strength: 10, dexterity: 10, charisma: 10, stamina: 10 }
+
+# # Then the player picks a character class and gets an upgrade accordingly.
+
+# character_classes = {
+#   warrior: { strength:  20 },
+#   thief:   { dexterity: 20 },
+#   scout:   { stamina:   20 },
+#   mage:    { charisma:  20 }
+# }
+
+# puts 'Please type your class (warrior, thief, scout, mage):'
+# input = gets.chomp.downcase.to_sym
+
+# player.merge!(character_classes[input])
+#OR player = player.merge(character_classes[input.to_sym])
+# puts input
+# puts input.class
+# puts 'Your character stats:'
+# puts player
+
+# h = {foo: 0, bar: 1, baz: 2}
+# h1 = {bat: 3, bar: 4}
+# p h.merge!(h1)
